@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>من نحن | أكاديمية القمة التعليمية</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ===== إعدادات عامة ===== */
+body {
+  margin:0;
+  font-family:'Tajawal',Arial,sans-serif;
+  height:100vh;              /* ارتفاع الشاشة كامل */
+  display:flex;
+  flex-direction:column;      /* الهيدر - المحتوى - الفوتر */
+  overflow:hidden;            /* يمنع التمرير الجانبي */
+}
+
+/* ===== الهيدر ===== */
+header {
+  height:60px;
+  background:rgba(0,0,0,0.9);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 15px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.5);
+  flex-shrink:0;
+}
+header img {
+  width:45px;
+  border-radius:50%;
+}
+header h1 {
+  font-size:18px;
+  margin:0;
+}
+#langBtn {
+  padding:3px 8px;
+  border:1px solid #6c2bd9;
+  border-radius:6px;
+  background:#fff;
+  color:#6c2bd9;
+  cursor:pointer;
+  font-size:11px;
+}
+
+/* ===== المحتوى ===== */
+main {
+  flex:1;                   /* يملأ المساحة بين الهيدر والفوتر */
+  overflow-y:auto;          /* يسمح بالتمرير العمودي داخل المحتوى */
+  padding:20px;
+  background:url("students.jpg") center/cover no-repeat fixed;
+}
+
+/* الأقسام */
+section {
+  background:rgba(255,255,255,0.95);
+  margin:20px auto;
+  padding:25px;
+  border-radius:15px;
+  max-width:900px;
+  text-align:right;
+  color:#333;
+  backdrop-filter:blur(4px);
+}
+h2 {
+  color:#6c2bd9;
+  margin-top:0;
+}
+
+/* ===== الفوتر ===== */
+footer {
+  height:50px;
+  background:#6c2bd9;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+footer{
+  padding:20px;
+  font-size:14px;
+  background: rgba(0,0,0,0.6); /* يمكنك تغييره حسب الرغبة */
+  color:#fff; /* كل النصوص أبيض */
+  text-align:center;
+}
+
+footer a{
+  color:#fff; /* روابط الفوتر باللون الأبيض */
+  text-decoration:none;
+  margin:0 8px;
+}
+
+footer a:hover{
+  text-decoration:underline;
+}
+</style>
+</head>
+<body>
+
+<header>
+<img src="c.jpg" class="logo">
+<h1 data-ar="🎓 أكاديمية القمة التعليمية" data-en="🎓 Al Qimma Educational Academy">🎓 أكاديمية القمة التعليمية</h1>
+<button id="langBtn">English</button>
+</header>
+
+<main>
+<section>
+<h2 data-ar="من نحن" data-en="About Us">من نحن</h2>
+<p data-ar="أكاديمية القمة التعليمية منصة متخصصة في تقديم دروس الكيمياء والرياضيات أونلاين بطريقة حديثة ومبسطة." 
+   data-en="Al Qimma Educational Academy is a platform specialized in providing online Chemistry and Mathematics lessons in a modern and simplified way.">
+أكاديمية القمة التعليمية منصة متخصصة في تقديم دروس الكيمياء والرياضيات أونلاين بطريقة حديثة ومبسطة.
+</p>
+
+<p data-ar="نهدف إلى مساعدة الطلاب على فهم المواد العلمية بعمق وتحقيق أعلى الدرجات من خلال شرح احترافي وتمارين تطبيقية." 
+   data-en="We aim to help students deeply understand scientific subjects and achieve top grades through professional explanations and practical exercises.">
+نهدف إلى مساعدة الطلاب على فهم المواد العلمية بعمق وتحقيق أعلى الدرجات من خلال شرح احترافي وتمارين تطبيقية.
+</p>
+
+<p data-ar="نؤمن أن التعليم الجيد هو أساس النجاح، لذلك نسعى لتقديم محتوى تعليمي متميز يناسب جميع المستويات." 
+   data-en="We believe good education is the foundation of success, so we strive to provide distinguished educational content suitable for all levels.">
+نؤمن أن التعليم الجيد هو أساس النجاح، لذلك نسعى لتقديم محتوى تعليمي متميز يناسب جميع المستويات.
+</p>
+</section>
+</main>
+
+<footer>
+© 2026 أكاديمية القمة التعليمية | 
+<a href="about.html">من نحن</a> | 
+<a href="privacy.html">سياسة الخصوصية</a> | 
+<a href="contact.html">تواصل معنا</a>
+</footer>
+
+<script>
+// تغيير اللغة عربي/إنجليزي
+let currentLang='ar';
+document.getElementById('langBtn').onclick=()=>{
+  currentLang=currentLang==='ar'?'en':'ar';
+  document.querySelectorAll('[data-ar]').forEach(el=>{
+    el.innerText=el.getAttribute(`data-${currentLang}`);
+  });
+  document.getElementById('langBtn').innerText=currentLang==='ar'?'English':'عربي';
+}
+</script>
+
+</body>
+</html>
